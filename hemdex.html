@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Güvenilir Siteler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 2000px; /* Sayfanın yüksekliğini artırır */
+            background-color: #2c3e50;
+            overflow: hidden;
+            position: relative;
+            color: #ecf0f1;
+        }
+
+        /* Arka plan için hareketli noktalar */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Noktaları geri plana atıyoruz */
+            background: radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+            overflow: hidden;
+        }
+
+        .dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+            animation: moveDots 10s linear infinite;
+        }
+
+        @keyframes moveDots {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) translateX(-100vw);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+            position: relative;
+            z-index: 2; /* İçerik önde */
+        }
+
+        .header {
+            background-color: #34495e;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #ecf0f1;
+            z-index: 3;
+            position: relative;
+        }
+
+        .header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #ecf0f1;
+        }
+
+        .announcements {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .announcement {
+            background-color: #34495e;
+            padding: 20px;
+            flex: 1;
+            margin: 0 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .promo-content {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .promo-content h3 {
+            margin: 0;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .promo-content p {
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .promo-content button {
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .promo-content button:hover {
+            background-color: #27ae60;
+        }
+
+        .promo-image img {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 10px;
+        }
+
+        .trusted-sites {
+            margin-bottom: 40px;
+        }
+
+        .trusted-sites h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ecf0f1;
+            background-color: #34495e;
+            color: #ecf0f1;
+            outline: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-container input[type="text"]:focus {
+            box-shadow: 0 0 10px rgba(46, 204, 113, 1);
+        }
+
+        .site-logos {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            width: 167px;
+            height: 223px;
+            background-color: #34495e;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-container img {
+            max-width: 147px;
+            max-height: 203px;
+            width: auto;
+            height: auto;
+        }
+
+        /* Hover Efekti: Büyüme ve Öne Çıkma */
+        .logo-container:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(46, 204, 113, 1), 0 0 30px rgba(231, 76, 60, 0.8); /* Yeşil ve kırmızı gölge */
+            z-index: 5;
+        }
+
+        /* En Güvenilir Siteler için Yeşil Gölge */
+        .trusted-sites .logo-container {
+            box-shadow: 0 0 20px rgba(46, 204, 113, 1); /* Yoğun yeşil gölge */
+        }
+
+        /* Tavsiye Edilen Siteler için Kırmızı Gölge Kaldırıldı */
+        .recommended-sites .logo-container {
+            box-shadow: none;
+        }
+
+        .recommended-sites h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* Banner Alanı */
+        .banner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .banner-container img {
+            width: 468px;
+            height: 60px;
+            border-radius: 10px;
+        }
+
+        /* Alt Kısım (Footer) */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #34495e;
+            margin-top: 40px;
+            border-top: 2px solid #ecf0f1;
+            z-index: 3;
+            position: relative;
+        }
+
+        .footer a {
+            margin: 0 10px;
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .footer a img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+
+        .footer p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .logo-container {
+                width: 200px;
+                height: 40px;
+            }
+
+            .banner-container img {
+                width: 100%;
+                height: auto;
+            }
+
+            .search-container input[type="text"] {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Arka Plan için Noktalar -->
+    <div class="background">
+        <!-- Noktalar için örnek div'ler -->
+        <div class="dot" style="top: 10%; left: 20%;"></div>
+        <div class="dot" style="top: 30%; left: 40%;"></div>
+        <div class="dot" style="top: 50%; left: 60%;"></div>
+        <div class="dot" style="top: 70%; left: 80%;"></div>
+        <div class="dot" style="top: 90%; left: 20%;"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site Logo">
+            <h1>Roulette Academy</h1>
+        </div>
+
+        <!-- Duyurular Bölümü -->
+        <div class="announcements">
+            <div class="announcement">
+                <div class="promo-content">
+                    <h3>Promosyon 1</h3>
+                    <p>Bu promosyon hakkında kısa bir açıklama yapın.</p>
+                    <button>Hemen Katıl</button>
+                </div>
+                <div class="promo-image">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Promosyon 1">
+                </div>
+            </div>
+            <div class="announcement">
+                <div class="promo-content">
+                    <h3>Promosyon 2</h3>
+                    <p>Bu promosyon hakkında kısa bir açıklama yapın.</p>
+                    <button>Hemen Katıl</button>
+                </div>
+                <div class="promo-image">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Promosyon 2">
+                </div>
+            </div>
+            <div class="announcement">
+                <div class="promo-content">
+                    <h3>Promosyon 3</h3>
+                    <p>Bu promosyon hakkında kısa bir açıklama yapın.</p>
+                    <button>Hemen Katıl</button>
+                </div>
+                <div class="promo-image">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Promosyon 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- En Güvenilir Siteler Bölümü -->
+        <div class="trusted-sites">
+            <h2>En Güvenilir Siteler</h2>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Site arayın...">
+            </div>
+            <div class="site-logos">
+                <div class="logo-container"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 1"></div>
+                <div class="logo-container"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 2"></div>
+                <div class="logo-container"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 3"></div>
+            </div>
+        </div>
+
+        <!-- Tavsiye Edilen Siteler Bölümü -->
+        <div class="recommended-sites">
+            <h2>Tavsiye Edilen Siteler</h2>
+            <div class="site-logos">
+                <div class="logo-container" data-number="1"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 4"></div>
+                <div class="logo-container" data-number="2"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 5"></div>
+                <div class="logo-container" data-number="3"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 6"></div>
+            </div>
+        </div>
+
+        <!-- Sağlayıcılar Bölümü (Banner) -->
+        <div class="banner-container">
+            <img src="https://i.ibb.co/G2hMhX8/kdddd.png" alt="Banner">
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="https://t.me/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+                Telegram
+            </a>
+            <a href="https://www.skype.com/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111630.png" alt="Skype">
+                Skype
+            </a>
+            <p>ROULETTE ACADEMY 2024</p>
+        </div>
+    </div>
+</body>
+</html>
