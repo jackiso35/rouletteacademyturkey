@@ -79,149 +79,6 @@
             color: #ecf0f1;
         }
 
-        /* Promosyon Bölümü */
-        .announcements {
-            display: flex;
-            justify-content: space-between;
-            margin: 30px 0 20px 0; /* Header'dan aşağı boşluk */
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .announcement {
-            background-color: #34495e;
-            padding: 20px;
-            flex: 1 1 30%;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-sizing: border-box;
-        }
-
-        .promo-content {
-            flex: 1;
-            margin-right: 20px;
-        }
-
-        .promo-content h3 {
-            margin: 0;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .promo-content p {
-            margin: 0;
-            margin-bottom: 20px;
-        }
-
-        .promo-content button {
-            padding: 10px 20px;
-            background-color: #2ecc71;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .promo-content button:hover {
-            background-color: #27ae60;
-        }
-
-        .promo-image img {
-            max-width: 100px;
-            max-height: 100px;
-            border-radius: 10px;
-        }
-
-        /* En Güvenilir Siteler */
-        .trusted-sites {
-            margin-bottom: 40px;
-        }
-
-        .trusted-sites h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .site-logos {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .logo-container {
-            width: 167px;
-            height: 223px;
-            background-color: #34495e;
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            flex-direction: column;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .logo-container img {
-            max-width: 147px;
-            max-height: 203px;
-            width: auto;
-            height: auto;
-        }
-
-        /* Hover Efekti: Büyüme ve Öne Çıkma */
-        .logo-container:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(46, 204, 113, 1), 0 0 30px rgba(231, 76, 60, 0.8);
-            z-index: 5;
-        }
-
-        /* İkinci casino kutucuğu (data-number="2") için özel stil */
-        .site-logos .logo-container[data-number="2"] {
-            background-color: #003a78;
-        }
-
-        /* En Güvenilir Siteler için Yeşil Gölge ve Numaralandırma */
-        .trusted-sites .logo-container {
-            box-shadow: 0 0 20px rgba(46, 204, 113, 1);
-        }
-
-        .trusted-sites .logo-container::before {
-            content: attr(data-number);
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: #27ae60;
-            color: white;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 50%;
-            font-size: 18px;
-        }
-        /* En güvenilir siteler bölümünde 3. kutucuğun arka planını beyaz yap */
-.trusted-sites .logo-container:nth-child(3) {
-    background-color: #ffffff;
-}
-
-        /* Tavsiye Edilen Siteler */
-        .recommended-sites {
-            margin-bottom: 40px;
-        }
-
-        .recommended-sites h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .recommended-sites .logo-container {
-            box-shadow: none; /* Numaralandırma kaldırıldı */
-        }
-
         /* Banner Alanı */
         .banner-container {
             display: flex;
@@ -238,7 +95,7 @@
             border-radius: 10px;
         }
 
-        /* Alt Kısım (Footer) */
+        /* Footer */
         .footer {
             text-align: center;
             padding: 20px;
@@ -277,37 +134,6 @@
                 margin-bottom: 10px;
             }
 
-            .announcements {
-                flex-direction: column;
-                margin: 30px 0 20px 0; /* Header'dan aşağı boşluk */
-            }
-
-            .announcement {
-                margin-bottom: 20px;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .promo-content {
-                text-align: center;
-                margin-right: 0;
-            }
-
-            .promo-content button {
-                width: 100%;
-                padding: 15px 0;
-            }
-
-            .logo-container {
-                width: 120px;
-                height: 160px;
-            }
-
-            .logo-container img {
-                max-width: 110px;
-                max-height: 140px;
-            }
-
             .banner-container img {
                 width: 100%;
                 height: auto;
@@ -319,36 +145,17 @@
                 font-size: 20px;
             }
 
-            .promo-content h3 {
-                font-size: 18px;
-            }
-
-            .promo-content button {
+            .footer a {
                 font-size: 16px;
             }
 
-            .logo-container {
-                width: 100px;
-                height: 140px;
-            }
-
-            .logo-container img {
-                max-width: 90px;
-                max-height: 120px;
+            .footer p {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Arka Plan için Noktalar -->
-    <div class="background">
-        <div class="dot" style="top: 10%; left: 20%;"></div>
-        <div class="dot" style="top: 30%; left: 40%;"></div>
-        <div class="dot" style="top: 50%; left: 60%;"></div>
-        <div class="dot" style="top: 70%; left: 80%;"></div>
-        <div class="dot" style="top: 90%; left: 20%;"></div>
-    </div>
-
     <div class="container">
         <!-- Header -->
         <div class="header">
@@ -358,10 +165,10 @@
 
         <!-- Üst Bannerlar -->
         <div class="banner-container">
-            <img id="top-banner" src="https://i.ibb.co/C9Wnc8k/Stake-Casino-728x90.gif" alt="728x90 Banner">
+            <img id="top-banner" src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
         </div>
 
-        <!-- Duyurular Bölümü (Promosyonlar) -->
+        <!-- İçerik (Promosyonlar) -->
         <div class="announcements">
             <div class="announcement">
                 <div class="promo-content">
@@ -395,44 +202,6 @@
             </div>
         </div>
 
-        <!-- En Güvenilir Siteler Bölümü -->
-        <div class="trusted-sites">
-            <h2>En Güvenilir Siteler</h2>
-            <div class="site-logos">
-                <a href="https://example.com/site1" target="_blank" class="logo-container" data-number="1">
-                    <img src="https://i.ibb.co/HYyK0Jj/Stakeusd.png" alt="Site 1">
-                </a>
-                <a href="https://example.com/site2" target="_blank" class="logo-container" data-number="2">
-                    <img src="https://i.ibb.co/x2B2387/MOST.png" alt="Site 2">
-                </a>
-                <a href="https://example.com/site3" target="_blank" class="logo-container" data-number="3">
-                    <img src="https://i.ibb.co/myC3cZj/slottica.png" alt="Site 3">
-                </a>
-            </div>
-        </div>
-
-        <!-- Tavsiye Edilen Siteler Bölümü -->
-        <div class="recommended-sites">
-            <h2>Tavsiye Edilen Siteler</h2>
-            <div class="site-logos">
-                <a href="https://example.com/site5" target="_blank" class="logo-container">
-                    <img src="https://i.ibb.co/18ytFPR/MARSBAH-S.png" alt="Site 5">
-                </a>
-                <a href="https://example.com/site6" target="_blank" class="logo-container">
-                    <img src="https://i.ibb.co/rFRqzY5/billybe.png" alt="Site 6">
-                </a>
-                <a href="https://example.com/site7" target="_blank" class="logo-container">
-                    <img src="https://i.ibb.co/ZYYTmjY/bulna-k.pngg" alt="Site 7">
-                </a>
-                <a href="https://example.com/site8" target="_blank" class="logo-container">
-                    <img src="https://i.ibb.co/ZYYTmjY/bulna-k.png" alt="Site 8">
-                </a>
-                <a href="https://example.com/site9" target="_blank" class="logo-container">
-                    <img src="https://i.ibb.co/ZYYTmjY/bulna-k.png" alt="Site 9">
-                </a>
-            </div>
-        </div>
-
         <!-- Alt Bannerlar -->
         <div class="banner-container">
             <img id="bottom-banner" src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
@@ -455,7 +224,7 @@
     <script>
         // Üst banner dizisi
         const topBanners = [
-            "https://i.ibb.co/4pRybdS/kddddtyt.png",
+            "https://i.ibb.co/JcYmVMs/BANNERmostt-1.png",
             "https://i.ibb.co/6vx7Mb5/banner-example.png",
             "https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png"
         ];
@@ -463,8 +232,8 @@
         // Alt banner dizisi
         const bottomBanners = [
             "https://i.ibb.co/4pRybdS/kddddtyt.png",
-            "https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png",
-            "https://i.ibb.co/6vx7Mb5/banner-example.png"
+            "https://i.ibb.co/f8cYCgf/Stake-Banners-728x90.jpg",
+          
         ];
 
         let topBannerIndex = 0;
@@ -481,8 +250,8 @@
             document.getElementById("bottom-banner").src = bottomBanners[bottomBannerIndex];
         }
 
-        // Her 15 saniyede bir bannerları değiştir
-        setInterval(changeBanners, 15000);
+        // Her 5 saniyede bir bannerları değiştir
+        setInterval(changeBanners, 5000);
     </script>
 </body>
 </html>
