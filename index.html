@@ -175,8 +175,38 @@
             font-size: 24px;
         }
 
+        .recommended-sites .site-logos {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         .recommended-sites .logo-container {
-            box-shadow: none; /* Numaralandırma kaldırıldı */
+            width: 167px;
+            height: 223px;
+            background-color: #34495e;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .recommended-sites .logo-container img {
+            max-width: 147px;
+            max-height: 203px;
+            width: auto;
+            height: auto;
+        }
+
+        .recommended-sites .logo-container:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(46, 204, 113, 1), 0 0 30px rgba(231, 76, 60, 0.8);
+            z-index: 5;
         }
 
         /* Footer */
@@ -300,6 +330,56 @@
         <!-- Alt Bannerlar -->
         <div class="banner-container">
             <img id="bottom-banner" src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
+        </div>
+
+        <!-- Tavsiye Edilen Siteler Bölümü -->
+        <div class="recommended-sites">
+            <h2>Tavsiye Edilen Siteler</h2>
+            <div class="site-logos">
+                <a href="https://example.com/site4" target="_blank" class="logo-container">
+                    <img src="https://i.ibb.co/18ytFPR/MARSBAH-S.png" alt="Site 4">
+                </a>
+                <a href="https://example.com/site5" target="_blank" class="logo-container">
+                    <img src="https://i.ibb.co/rFRqzY5/billybe.png" alt="Site 5">
+                </a>
+                <a href="https://example.com/site6" target="_blank" class="logo-container">
+                    <img src="https://i.ibb.co/ZYYTmjY/bulna-k.png" alt="Site 6">
+                </a>
+            </div>
+        </div>
+
+        <!-- Duyurular Bölümü (Promosyonlar) -->
+        <div class="announcements">
+            <div class="announcement">
+                <div class="promo-content">
+                    <h3>Promosyon 1</h3>
+                    <p>Bu promosyon hakkında kısa bir açıklama yapın.</p>
+                    <button>Hemen Katıl</button>
+                </div>
+                <div class="promo-image">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Promosyon 1">
+                </div>
+            </div>
+            <div class="announcement">
+                <div class="promo-content">
+                    <h3>Promosyon 2</h3>
+                    <p>Bu promosyon hakkında kısa bir açıklama yapın.</p>
+                    <button>Hemen Katıl</button>
+                </div>
+                <div class="promo-image">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Promosyon 2">
+                </div>
+            </div>
+            <div class="announcement">
+                <div class="promo-content">
+                    <h3>Promosyon 3</h3>
+                    <p>Bu promosyon hakkında kısa bir açıklama yapın.</p>
+                    <button>Hemen Katıl</button>
+                </div>
+                <div class="promo-image">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Promosyon 3">
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->
