@@ -233,8 +233,8 @@
         .banner-container img {
             width: 728px;
             height: 90px;
-            max-width: 100%; /* Mobil uyumlu hale getirir */
-            height: auto; /* Yüksekliği otomatik ayarlayarak oranı korur */
+            max-width: 100%;
+            height: auto;
             border-radius: 10px;
         }
 
@@ -356,6 +356,11 @@
             <h1>Roulette Academy</h1>
         </div>
 
+        <!-- Üst Bannerlar -->
+        <div class="banner-container">
+            <img id="top-banner" src="https://i.ibb.co/C9Wnc8k/Stake-Casino-728x90.gif" alt="728x90 Banner">
+        </div>
+
         <!-- Duyurular Bölümü (Promosyonlar) -->
         <div class="announcements">
             <div class="announcement">
@@ -393,11 +398,6 @@
         <!-- En Güvenilir Siteler Bölümü -->
         <div class="trusted-sites">
             <h2>En Güvenilir Siteler</h2>
-            <!-- Banner -->
-            <div class="banner-container">
-                <img src="https://i.ibb.co/C9Wnc8k/Stake-Casino-728x90.gif" alt="728x90 Banner">
-            </div>
-            <!-- Site Logoları -->
             <div class="site-logos">
                 <a href="https://example.com/site1" target="_blank" class="logo-container" data-number="1">
                     <img src="https://i.ibb.co/HYyK0Jj/Stakeusd.png" alt="Site 1">
@@ -415,7 +415,6 @@
         <div class="recommended-sites">
             <h2>Tavsiye Edilen Siteler</h2>
             <div class="site-logos">
-                
                 <a href="https://example.com/site5" target="_blank" class="logo-container">
                     <img src="https://i.ibb.co/18ytFPR/MARSBAH-S.png" alt="Site 5">
                 </a>
@@ -434,9 +433,9 @@
             </div>
         </div>
 
-        <!-- Sağlayıcılar Bölümü (Banner) -->
+        <!-- Alt Bannerlar -->
         <div class="banner-container">
-            <img src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
+            <img id="bottom-banner" src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
         </div>
 
         <!-- Footer -->
@@ -452,5 +451,38 @@
             <p>ROULETTE ACADEMY 2024</p>
         </div>
     </div>
+
+    <script>
+        // Üst banner dizisi
+        const topBanners = [
+            "https://i.ibb.co/4pRybdS/kddddtyt.png",
+            "https://i.ibb.co/6vx7Mb5/banner-example.png",
+            "https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png"
+        ];
+
+        // Alt banner dizisi
+        const bottomBanners = [
+            "https://i.ibb.co/4pRybdS/kddddtyt.png",
+            "https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png",
+            "https://i.ibb.co/6vx7Mb5/banner-example.png"
+        ];
+
+        let topBannerIndex = 0;
+        let bottomBannerIndex = 0;
+
+        // Banner değiştirme fonksiyonu
+        function changeBanners() {
+            // Üst banner değiştir
+            topBannerIndex = (topBannerIndex + 1) % topBanners.length;
+            document.getElementById("top-banner").src = topBanners[topBannerIndex];
+
+            // Alt banner değiştir
+            bottomBannerIndex = (bottomBannerIndex + 1) % bottomBanners.length;
+            document.getElementById("bottom-banner").src = bottomBanners[bottomBannerIndex];
+        }
+
+        // Her 15 saniyede bir bannerları değiştir
+        setInterval(changeBanners, 15000);
+    </script>
 </body>
 </html>
