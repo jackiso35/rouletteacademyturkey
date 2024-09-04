@@ -61,9 +61,9 @@
             padding: 20px;
             display: flex;
             align-items: center;
-            justify-content: center; /* Ortalar */
+            justify-content: center; /* Ortala */
             border-bottom: 2px solid #ecf0f1;
-            text-align: center; /* Yazıyı ortalar */
+            text-align: center; /* Yazıyı ortala */
         }
 
         .header img {
@@ -79,21 +79,24 @@
             color: #ecf0f1;
         }
 
+        /* Promosyon Bölümü */
         .announcements {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin: 30px 0 20px 0; /* Header'dan aşağı boşluk */
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .announcement {
             background-color: #34495e;
             padding: 20px;
-            flex: 1;
-            margin: 0 10px;
+            flex: 1 1 30%;
             border-radius: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-sizing: border-box;
         }
 
         .promo-content {
@@ -131,6 +134,7 @@
             border-radius: 10px;
         }
 
+        /* En Güvenilir Siteler */
         .trusted-sites {
             margin-bottom: 40px;
         }
@@ -176,13 +180,12 @@
             z-index: 5;
         }
 
-        /* En Güvenilir Siteler için Yeşil Gölge */
+        /* En Güvenilir Siteler için Yeşil Gölge ve Numaralandırma */
         .trusted-sites .logo-container {
             box-shadow: 0 0 20px rgba(46, 204, 113, 1);
         }
 
-        /* Numaralandırma */
-        .logo-container::before {
+        .trusted-sites .logo-container::before {
             content: attr(data-number);
             position: absolute;
             top: 10px;
@@ -193,6 +196,21 @@
             padding: 5px 10px;
             border-radius: 50%;
             font-size: 18px;
+        }
+
+        /* Tavsiye Edilen Siteler */
+        .recommended-sites {
+            margin-bottom: 40px;
+        }
+
+        .recommended-sites h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .recommended-sites .logo-container {
+            box-shadow: none; /* Numaralandırma kaldırıldı */
         }
 
         /* Banner Alanı */
@@ -207,6 +225,8 @@
             width: 728px;
             height: 90px;
             border-radius: 10px;
+            max-width: 100%; /* Responsive için */
+            height: auto;
         }
 
         /* Alt Kısım (Footer) */
@@ -250,12 +270,13 @@
 
             .announcements {
                 flex-direction: column;
-                margin: 0;
+                margin: 30px 0 20px 0; /* Header'dan aşağı boşluk */
             }
 
             .announcement {
                 margin-bottom: 20px;
                 flex-direction: column;
+                align-items: center;
             }
 
             .promo-content {
@@ -326,7 +347,7 @@
             <h1>Roulette Academy</h1>
         </div>
 
-        <!-- Duyurular Bölümü -->
+        <!-- Duyurular Bölümü (Promosyonlar) -->
         <div class="announcements">
             <div class="announcement">
                 <div class="promo-content">
@@ -369,9 +390,15 @@
             </div>
             <!-- Site Logoları -->
             <div class="site-logos">
-                <div class="logo-container" data-number="1"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 1"></div>
-                <div class="logo-container" data-number="2"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 2"></div>
-                <div class="logo-container" data-number="3"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 3"></div>
+                <a href="https://example.com/site1" target="_blank" class="logo-container" data-number="1">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 1">
+                </a>
+                <a href="https://example.com/site2" target="_blank" class="logo-container" data-number="2">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 2">
+                </a>
+                <a href="https://example.com/site3" target="_blank" class="logo-container" data-number="3">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 3">
+                </a>
             </div>
         </div>
 
@@ -379,15 +406,30 @@
         <div class="recommended-sites">
             <h2>Tavsiye Edilen Siteler</h2>
             <div class="site-logos">
-                <div class="logo-container" data-number="1"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 4"></div>
-                <div class="logo-container" data-number="2"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 5"></div>
-                <div class="logo-container" data-number="3"><img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 6"></div>
+                <a href="https://example.com/site4" target="_blank" class="logo-container">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 4">
+                </a>
+                <a href="https://example.com/site5" target="_blank" class="logo-container">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 5">
+                </a>
+                <a href="https://example.com/site6" target="_blank" class="logo-container">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 6">
+                </a>
+                <a href="https://example.com/site7" target="_blank" class="logo-container">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 7">
+                </a>
+                <a href="https://example.com/site8" target="_blank" class="logo-container">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 8">
+                </a>
+                <a href="https://example.com/site9" target="_blank" class="logo-container">
+                    <img src="https://i.ibb.co/2qsLGzv/REGISTER-10-USDT-GET.png" alt="Site 9">
+                </a>
             </div>
         </div>
 
         <!-- Sağlayıcılar Bölümü (Banner) -->
         <div class="banner-container">
-            <img src="https://i.ibb.co/G2hMhX8/kdddd.png" alt="Banner">
+            <img src="https://i.ibb.co/6vx7Mb5/banner-example.png" alt="728x90 Banner">
         </div>
 
         <!-- Footer -->
