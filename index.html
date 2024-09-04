@@ -185,27 +185,15 @@
             background-color: #003a78;
         }
 
-        /* En Güvenilir Siteler için Yeşil Gölge ve Numaralandırma */
+        /* En Güvenilir Siteler için Yeşil Gölge */
         .trusted-sites .logo-container {
             box-shadow: 0 0 20px rgba(46, 204, 113, 1);
         }
 
+        /* Numaralandırmayı Kaldır */
         .trusted-sites .logo-container::before {
-            content: attr(data-number);
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: #27ae60;
-            color: white;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 50%;
-            font-size: 18px;
+            content: none;
         }
-        /* En güvenilir siteler bölümünde 3. kutucuğun arka planını beyaz yap */
-.trusted-sites .logo-container:nth-child(3) {
-    background-color: #ffffff;
-}
 
         /* Tavsiye Edilen Siteler */
         .recommended-sites {
@@ -218,8 +206,41 @@
             font-size: 24px;
         }
 
-        .recommended-sites .logo-container {
-            box-shadow: none; /* Numaralandırma kaldırıldı */
+        /* İlk kutucuğun arka plan rengini #1e222e yap */
+        .recommended-sites .logo-container:nth-child(1) {
+            background-color: #1e222e;
+        }
+
+        /* İkinci kutucuğun arka plan rengini beyaz yap */
+        .recommended-sites .logo-container:nth-child(2) {
+            background-color: #ffffff;
+            color: #000; /* Yazı rengini siyah yap */
+        }
+
+        /* 3., 4. ve 5. kutucuklar için fotoğrafı arka plan olarak kullan */
+        .recommended-sites .logo-container:nth-child(3) {
+            background-image: url('https://i.ibb.co/ZYYTmjY/bulna-k.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Yazı rengini beyaz yap */
+        }
+
+        .recommended-sites .logo-container:nth-child(4) {
+            background-image: url('https://i.ibb.co/ZYYTmjY/bulna-k.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .recommended-sites .logo-container:nth-child(5) {
+            background-image: url('https://i.ibb.co/ZYYTmjY/bulna-k.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .recommended-sites .logo-container img {
+            opacity: 0; /* Görselleri gizle, sadece arka plan fotoğrafı görünsün */
         }
 
         /* Banner Alanı */
@@ -423,7 +444,7 @@
                     <img src="https://i.ibb.co/rFRqzY5/billybe.png" alt="Site 6">
                 </a>
                 <a href="https://example.com/site7" target="_blank" class="logo-container">
-                    <img src="https://i.ibb.co/ZYYTmjY/bulna-k.pngg" alt="Site 7">
+                    <img src="https://i.ibb.co/ZYYTmjY/bulna-k.png" alt="Site 7">
                 </a>
                 <a href="https://example.com/site8" target="_blank" class="logo-container">
                     <img src="https://i.ibb.co/ZYYTmjY/bulna-k.png" alt="Site 8">
