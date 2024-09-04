@@ -213,21 +213,21 @@
             box-shadow: none; /* Numaralandırma kaldırıldı */
         }
 
-       /* Banner Alanı */
-.banner-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-}
+        /* Banner Alanı */
+        .banner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
 
-.banner-container img {
-    width: 728px;
-    height: 90px;
-    max-width: 100%; /* Mobil uyumlu hale getirir */
-    height: auto; /* Yüksekliği otomatik ayarlayarak oranı korur */
-    border-radius: 10px;
-}
+        .banner-container img {
+            width: 728px;
+            height: 90px;
+            max-width: 100%; /* Mobil uyumlu hale getirir */
+            height: auto; /* Yüksekliği otomatik ayarlayarak oranı korur */
+            border-radius: 10px;
+        }
 
         /* Alt Kısım (Footer) */
         .footer {
@@ -256,12 +256,13 @@
             font-size: 16px;
         }
 
-       /* RESPONSIVE TASARIM */
-@media (max-width: 768px) {
-    .banner-container img {
-        width: 100%;
-        height: auto; /* Bannerları mobilde genişliğe göre ayarlar */
-    }
+        /* RESPONSIVE TASARIM */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
 
             .header img {
                 margin-bottom: 10px;
