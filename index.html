@@ -196,6 +196,19 @@
         }
 
         /* Tavsiye Edilen Siteler */
+        /* 3., 4. ve 5. kutucuklar için fotoğraf arka planı */
+.recommended-sites .logo-container:nth-child(3),
+.recommended-sites .logo-container:nth-child(4),
+.recommended-sites .logo-container:nth-child(5) {
+    background-image: url('https://i.ibb.co/ZYYTmjY/bulna-k.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Yazı rengini beyaz yap */
+}
+
+/* Yalnızca 3., 4. ve 5. kutucuklarda img gizlenir */
+.recommended-sites .logo-container:nth-child(3) img,
+.recommended-sites .logo-container
         .recommended-sites {
             margin-bottom: 40px;
         }
@@ -419,7 +432,7 @@
                 <img src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
             </div>
             <!-- Site Logoları -->
-            <div class="site-logos">
+            <div class="site-logos">fff
                 <a href="https://example.com/site1" target="_blank" class="logo-container" data-number="1">
                     <img src="https://i.ibb.co/HYyK0Jj/Stakeusd.png" alt="Site 1">
                 </a>
