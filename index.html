@@ -87,6 +87,13 @@
             margin: 20px 0;
         }
 
+        .banner-container a {
+            display: block;
+            width: 728px;
+            height: 90px;
+            max-width: 100%;
+        }
+
         .banner-container img {
             width: 728px;
             height: 90px;
@@ -162,6 +169,14 @@
             padding: 5px 10px;
             border-radius: 50%;
             font-size: 18px;
+        }
+
+        /* Mobilde sayıları küçült */
+        @media (max-width: 768px) {
+            .trusted-sites .logo-container::before {
+                font-size: 14px;
+                padding: 3px 7px;
+            }
         }
 
         /* Tavsiye Edilen Siteler */
@@ -400,7 +415,9 @@
 
         <!-- Üst Bannerlar -->
         <div class="banner-container">
-            <img id="top-banner" src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
+            <a href="https://example.com/banner1" target="_blank">
+                <img id="top-banner" src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
+            </a>
         </div>
 
         <!-- En Güvenilir Siteler Bölümü -->
@@ -443,7 +460,9 @@
 
         <!-- Alt Bannerlar -->
         <div class="banner-container">
-            <img id="bottom-banner" src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
+            <a href="https://example.com/banner2" target="_blank">
+                <img id="bottom-banner" src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
+            </a>
         </div>
 
         <!-- Duyurular Bölümü (Promosyonlar) -->
@@ -497,15 +516,13 @@
         // Üst banner dizisi
         const topBanners = [
             "https://i.ibb.co/f8cYCgf/Stake-Banners-728x90.jpg",
-            "https://i.ibb.co/JcYmVMs/BANNERmostt-1.png",
-
+            "https://i.ibb.co/JcYmVMs/BANNERmostt-1.png"
         ];
 
         // Alt banner dizisi
         const bottomBanners = [
             "https://i.ibb.co/3mt6tW1/B-LLY.png",
-            "https://i.ibb.co/JcYmVMs/BANNERmostt-1.png",
-            
+            "https://i.ibb.co/JcYmVMs/BANNERmostt-1.png"
         ];
 
         let topBannerIndex = 0;
