@@ -415,7 +415,7 @@
 
         <!-- Üst Bannerlar -->
         <div class="banner-container">
-            <a href="https://example.com/banner1" target="_blank">
+            <a id="top-banner-link" href="https://example.com/banner1" target="_blank">
                 <img id="top-banner" src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
             </a>
         </div>
@@ -460,7 +460,7 @@
 
         <!-- Alt Bannerlar -->
         <div class="banner-container">
-            <a href="https://example.com/banner2" target="_blank">
+            <a id="bottom-banner-link" href="https://example.com/banner2" target="_blank">
                 <img id="bottom-banner" src="https://i.ibb.co/4pRybdS/kddddtyt.png" alt="728x90 Banner">
             </a>
         </div>
@@ -515,14 +515,14 @@
     <script>
         // Üst banner dizisi
         const topBanners = [
-            "https://i.ibb.co/f8cYCgf/Stake-Banners-728x90.jpg",
-            "https://i.ibb.co/JcYmVMs/BANNERmostt-1.png"
+            { url: "https://i.ibb.co/f8cYCgf/Stake-Banners-728x90.jpg", link: "https://example.com/banner1" },
+            { url: "https://i.ibb.co/JcYmVMs/BANNERmostt-1.png", link: "https://example.com/banner2" }
         ];
 
         // Alt banner dizisi
         const bottomBanners = [
-            "https://i.ibb.co/3mt6tW1/B-LLY.png",
-            "https://i.ibb.co/JcYmVMs/BANNERmostt-1.png"
+            { url: "https://i.ibb.co/3mt6tW1/B-LLY.png", link: "https://example.com/banner3" },
+            { url: "https://i.ibb.co/JcYmVMs/BANNERmostt-1.png", link: "https://example.com/banner4" }
         ];
 
         let topBannerIndex = 0;
@@ -532,11 +532,13 @@
         function changeBanners() {
             // Üst banner değiştir
             topBannerIndex = (topBannerIndex + 1) % topBanners.length;
-            document.getElementById("top-banner").src = topBanners[topBannerIndex];
+            document.getElementById("top-banner").src = topBanners[topBannerIndex].url;
+            document.getElementById("top-banner-link").href = topBanners[topBannerIndex].link;
 
             // Alt banner değiştir
             bottomBannerIndex = (bottomBannerIndex + 1) % bottomBanners.length;
-            document.getElementById("bottom-banner").src = bottomBanners[bottomBannerIndex];
+            document.getElementById("bottom-banner").src = bottomBanners[bottomBannerIndex].url;
+            document.getElementById("bottom-banner-link").href = bottomBanners[bottomBannerIndex].link;
         }
 
         // Her 5 saniyede bir bannerları değiştir
